@@ -1,0 +1,5 @@
+,model,cv_mean,accuracy,f1,mae,r2
+Type_Of_Failure,LightGBM,0.4038,0.4903,0.474,-,-
+Serial_Device,LightGBM,0.1006,0.1059,0.1435,-,-
+Down_Time,LightGBM,5.4329,-,-,5.3214,0.0735
+When_Panne,LightGBM,30.1447,-,-,29.863,-0.2059

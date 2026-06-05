@@ -1,0 +1,5 @@
+,model,cv_mean,accuracy,f1,mae,r2
+Type_Of_Failure,KNN(k=3),0.987,0.9874,0.9869,-,-
+Serial_Device,KNN(k=3),0.3314,0.3771,0.3306,-,-
+Down_Time,KNN(k=15),5.9749,-,-,5.7612,0.0033
+When_Panne,KNN(k=15),28.3634,-,-,27.5937,0.0185

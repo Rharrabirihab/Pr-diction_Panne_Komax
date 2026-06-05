@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Data & notebooks not needed for runtime
+notebooks/
+reports/
+
+# Large/unused datasets
+data/raw/
+
+# Local virtualenv
+venv/
+
+# Git/doc
+.git/
+*.docx
+

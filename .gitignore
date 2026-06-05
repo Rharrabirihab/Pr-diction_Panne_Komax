@@ -1,0 +1,16 @@
+# Données sensibles
+data/raw/
+*.xlsx
+
+# Modèles lourds (optionnel)
+# models/*.pkl
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.egg-info/
+
+# Environnement
+venv/
+.env

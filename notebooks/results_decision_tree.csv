@@ -1,0 +1,5 @@
+,model,cv_mean,accuracy,f1,mae,r2
+Type_Of_Failure,DT,0.9995,0.9984,0.9982,-,-
+Serial_Device,DT,0.3211,0.3986,0.3073,-,-
+Down_Time,DT,5.4655,-,-,5.2227,0.1068
+When_Panne,DT,28.1761,-,-,28.4945,-0.4087
