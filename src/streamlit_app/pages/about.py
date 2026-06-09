@@ -3,11 +3,7 @@ from PIL import Image
 import base64
 from io import BytesIO
 
-st.set_page_config(
-    page_title="À propos",
-    page_icon="ℹ️",
-    layout="wide"
-)
+
 def image_to_base64(image):
     buffered = BytesIO()
     image.save(buffered, format="PNG")
@@ -79,7 +75,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 try:
-    logo = Image.open("assets/logo.png")
+    logo = Image.open("assets/predictkomax.jpg")
     logo_base64 = image_to_base64(logo)
 except Exception as e:
     logo_base64 = ""
@@ -96,10 +92,10 @@ st.markdown(f"""
 st.markdown("""
 <div class="section">
 
-<h3>Présentation</h3>
+<h3>🏭 Présentation</h3>
 
-<strong>Estimaison</strong> est une application intelligente permettant d’estimer les pannes de machine de coupe KOMAX , à partir d’un jeu de données réel issu de l'application CAO.  
-Ce projet combine la <strong>data science</strong>, l’<strong>analyse exploratoire</strong>, la <strong>modélisation prédictive</strong> et une <strong>interface utilisateur interactive</strong>.
+<strong>Komax Predict</strong> est une application de maintenance prédictive pour anticiper les pannes des machines <strong>KOMAX</strong> (coupe/industrie).  
+Elle s’appuie sur un jeu de données réel, un travail de préparation/encodage des variables et un modèle de classification qui aide à estimer si une machine risque d’être en panne.
 
 <hr/>
 
@@ -107,32 +103,36 @@ Ce projet combine la <strong>data science</strong>, l’<strong>analyse explorat
 
 Le pipeline de développement inclut :
 <ul>
-    <li>Une analyse exploratoire détaillée (EDA) pour comprendre les variables influentes</li>
-    <li>L’application de techniques de réduction de dimensionnalité (PCA)</li>
-    <li>Des essais de plusieurs modèles de régression (linéaire, Lasso, Ridge, etc.)</li>
-    <li>Une expérimentation approfondie avec <strong>PyCaret</strong>, une bibliothèque AutoML puissante</li>
-    <li>L’évaluation fine des performances via la validation croisée</li>
+    <li>Une analyse exploratoire des données (EDA) pour comprendre les variables influentes et détecter les incohérences</li>
+    <li>Le nettoyage et la préparation des données (encodage, standardisation/scaling si nécessaire)</li>
+    <li>Des essais de plusieurs modèles de machine learning (baseline + modèles plus performants)</li>
+    <li>Une expérimentation avec des approches AutoML (PyCaret) pour comparer rapidement les algorithmes</li>
+    <li>L’évaluation des performances et l’affichage des résultats (métriques, visualisations)</li>
 </ul>
 
 <hr/>
 
 <h3>🔧 Technologies utilisées</h3>
 
-Python, Streamlit, Pandas, Seaborn, Matplotlib, scikit-learn, PyCaret, PCA, Jupyter
+Python, Streamlit, Pandas, NumPy, Matplotlib, Seaborn, scikit-learn, PyCaret, (PCA si utilisé), Jupyter
 
 <hr/>
 
 <h3>👩‍💻 Réalisé par</h3>
 
 <ul>
+    
     <li><strong>Rihab RHARRABI</strong></li>
+    
 </ul>
 
 <hr/>
 
 <h3>🎓 Contexte</h3>
 
-Ce projet a été réalisé dans le cadre d’un projet de fin d'études  visant à appliquer concrètement les notions d’apprentissage automatique à un cas pratique du domaine industrielle, tout en développant une application web fonctionnelle et esthétique.
+Ce projet a été réalisé dans le cadre de projet de fin d'études visant à appliquer les techniques d’apprentissage automatique à un cas industriel, tout en développant une application web conviviale et esthétique pour la prédiction de pannes des machines de coupe KOMAX, 
+            dans le cadre de la maintenance prédictive.
 
 </div>
 """, unsafe_allow_html=True)
+

@@ -1,24 +1,37 @@
 import streamlit as st
-from config import setup_page
 
-setup_page
+# Legacy single-file Streamlit app.
+# Kept for compatibility; it now delegates to the real multi-page app package.
+
+from streamlit_app.config import setup_page
+
+
+setup_page()
+
+from pathlib import Path
 
 st.title("Prédiction des pannes Komax")
-st.write("Bienvenue dans l'applicaation de maintenance prédictive")
-st.image("assets/logo.png", width=200)
-st.sidebar.title("Navigation")
+st.write("Bienvenue dans l'application de maintenance prédictive")
 
-page=st.sidebar.selectbox("Choisir une page", ["Accueil", "EDA", "Prediction", "Aboout"])
+assets_dir = Path(__file__).resolve().parent / "streamlit_app" / "assets"
+st.image(str(assets_dir / "predictkomax.jpg"), width=200)
+
+st.sidebar.title("Navigation")
+page = st.sidebar.selectbox(
+    "Choisir une page",
+    ["Accueil", "Se connecter", "S'inscrire", "EDA", "Prediction", "About"],
+)
+
+
 if page == "Accueil":
-    st.write("Projet Machine Learning pour prédir les pannes")
+    st.write("Projet Machine Learning pour prédire les pannes")
 
 elif page == "EDA":
-    import pages.EDA
+    from src.streamlit_app.pages import EDA  # noqa: F401
 
 elif page == "Prediction":
-    import pages.predict
+    from src.streamlit_app.pages import predict  # noqa: F401
 
 elif page == "About":
-    import pages.about
-
+    from src.streamlit_app.pages import about  # noqa: F401
 
